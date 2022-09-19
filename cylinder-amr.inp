@@ -5,7 +5,7 @@ time.stop_time               =   22000.0     # Max (#
 tim.max_step = -1
 time.fixed_dt = 0.0045
 time.cfl = 1.0
-time.plot_interval = 10
+time.plot_interval = 1
 time.checkpoint_interval = -10
 io.plot_file = out/plt
 io.check_file = out/chk
@@ -34,6 +34,13 @@ mac_proj.mg_atol = 1.0e-10
 mac_proj.bottom_rtol = 1.0e-06
 mac_proj.bottom_atol = 1.0e-08
 mac_proj.hypre_namespace = "hypre"
+velocity_diffusion.verbose = 3
+velocity_diffusion.use_tensor_operator = false
+velocity_diffusion.use_segregated_operator = true
+velocity_diffusion.do_nsolve = true
+#nodal_proj.bottom_solver = hypre
+nodal_proj.verbose = 3
+nodal_proj.hypre_namespace = "hnode"
 #########################################
 #                 HYPRE                 #
 #########################################
@@ -47,9 +54,12 @@ hypre.bamg_verbose = 0
 hypre.verbose = 0
 hypre.recompute_preconditioner = 0
 hypre.hypre_solver = GMRES
+hnode.hypre_solver = GMRES
 hypre.hypre_preconditioner = BoomerAMG
 hypre.num_krylov = 20
 hypre.max_iterations = 20
+hnode.rtol = 1.e-5
+hnode.atol = 1.e-8
 hypre.rtol = 1.e-5
 hypre.atol = 1.e-8
 hypre.bamg_coarsen_type = 8
@@ -98,6 +108,7 @@ nodal_proj.mg_rtol = 1.0e-6
 nodal_proj.mg_atol = 1.0e-10
 
 # Mesh Refinement
+#amr.n_cell            = 256 128 8 # Grid cells at coarsest AMRlevel
 amr.n_cell            = 128 64 4 # Grid cells at coarsest AMRlevel
 amr.blocking_factor_z = 4
 amr.blocking_factor_x = 32
