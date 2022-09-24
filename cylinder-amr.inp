@@ -37,8 +37,8 @@ mac_proj.hypre_namespace = "hypre"
 velocity_diffusion.verbose = 3
 velocity_diffusion.use_tensor_operator = false
 velocity_diffusion.use_segregated_operator = true
-velocity_diffusion.do_nsolve = true
 #nodal_proj.bottom_solver = hypre
+velocity_diffusion.do_nsolve = true
 nodal_proj.verbose = 3
 nodal_proj.hypre_namespace = "hnode"
 #########################################
@@ -110,12 +110,16 @@ nodal_proj.mg_atol = 1.0e-10
 # Mesh Refinement
 #amr.n_cell            = 256 128 8 # Grid cells at coarsest AMRlevel
 amr.n_cell            = 128 64 4 # Grid cells at coarsest AMRlevel
+amr.blocking_factor_x = 128
+amr.blocking_factor_y = 64
 amr.blocking_factor_z = 4
-amr.blocking_factor_x = 32
-amr.blocking_factor_y = 32
+amr.max_grid_size_x = 128
+amr.max_grid_size_y = 64
 amr.max_grid_size_z = 4
-amr.max_grid_size_x = 32
-amr.max_grid_size_y = 32
+
+amrex.abort_on_out_of_memory=1
+amrex.the_arena_is_managed=1
+amrex.async_out=0
 
 amr.max_level = 2
 tagging.labels = static #dynamic

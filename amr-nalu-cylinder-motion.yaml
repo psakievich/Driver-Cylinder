@@ -5,7 +5,7 @@ exawind:
     - cylinder-nalu.yaml
   amr_wind_inp: cylinder-amr.inp
   num_timesteps: 30
-  additional_picard_iterations: 2
+  additional_picard_iterations: 0
 
   # Variables for overset exchange
   nalu_vars:
