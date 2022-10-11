@@ -123,16 +123,19 @@ amrex.async_out=0
 
 amr.max_level = 1
 tagging.labels = static #dynamic
+tagging.static.type = "CartBoxRefinement"
+tagging.static.static_refinement_def = "static_box.txt"
 
-tagging.static.min_level = 0
-tagging.static.max_level = 2
-tagging.static.type = GeometryRefinement
-tagging.static.shapes = c1
-tagging.static.c1.type = box
-tagging.static.c1.origin = -2.5 -2.5 -0.375
-tagging.static.c1.xaxis = 5.0 0.0 0.0
-tagging.static.c1.yaxis = 0.0 5.0 0.0
-tagging.static.c1.zaxis = 0.0 0.0 0.75
+
+#tagging.static.min_level = 0
+#tagging.static.max_level = 1
+#tagging.static.type = GeometryRefinement
+#tagging.static.shapes = c1
+#tagging.static.c1.type = box
+#tagging.static.c1.origin = -2.5 -2.5 -0.375
+#tagging.static.c1.xaxis = 5.0 0.0 0.0
+#tagging.static.c1.yaxis = 0.0 5.0 0.0
+#tagging.static.c1.zaxis = 0.0 0.0 0.75
 
 # tagging.dynamic.type = OversetRefinement
 # tagging.dynamic.max_level = 2
