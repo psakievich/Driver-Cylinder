@@ -3,7 +3,7 @@
 #.......................................#
 time.stop_time               =   22000.0     # Max (#
 tim.max_step = -1
-time.fixed_dt = 0.0045
+time.fixed_dt = 0.02
 time.cfl = 1.0
 time.plot_interval = 1
 time.checkpoint_interval = -10
@@ -24,22 +24,22 @@ turbulence.model = Laminar
 #mac_proj.do_nsolve = 1
 #mac_proj.mg_atol = 1.0e-6
 #
-mac_proj.verbose=3
+mac_proj.verbose=0
 mac_proj.max_coarsening_level = 0
 #mac_proj.do_nsolve = true
-mac_proj.bottom_verbose  = 3
+mac_proj.bottom_verbose  = 0
 mac_proj.bottom_solver = hypre
 mac_proj.mg_rtol = 1.0e-7
 mac_proj.mg_atol = 1.0e-10
 mac_proj.bottom_rtol = 1.0e-06
 mac_proj.bottom_atol = 1.0e-08
 mac_proj.hypre_namespace = "hypre"
-velocity_diffusion.verbose = 3
+velocity_diffusion.verbose = 0
 velocity_diffusion.use_tensor_operator = false
 velocity_diffusion.use_segregated_operator = true
 #nodal_proj.bottom_solver = hypre
 velocity_diffusion.do_nsolve = true
-nodal_proj.verbose = 3
+nodal_proj.verbose = 0
 nodal_proj.hypre_namespace = "hnode"
 #########################################
 #                 HYPRE                 #
@@ -121,7 +121,7 @@ amrex.abort_on_out_of_memory=1
 amrex.the_arena_is_managed=1
 amrex.async_out=0
 
-amr.max_level = 2
+amr.max_level = 1
 tagging.labels = static #dynamic
 
 tagging.static.min_level = 0
@@ -129,9 +129,9 @@ tagging.static.max_level = 2
 tagging.static.type = GeometryRefinement
 tagging.static.shapes = c1
 tagging.static.c1.type = box
-tagging.static.c1.origin = -4.0 -4.0 -0.375
-tagging.static.c1.xaxis = 8.0 0.0 0.0
-tagging.static.c1.yaxis = 0.0 8.0 0.0
+tagging.static.c1.origin = -2.5 -2.5 -0.375
+tagging.static.c1.xaxis = 5.0 0.0 0.0
+tagging.static.c1.yaxis = 0.0 5.0 0.0
 tagging.static.c1.zaxis = 0.0 0.0 0.75
 
 # tagging.dynamic.type = OversetRefinement
