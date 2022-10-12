@@ -82,8 +82,8 @@ incflo.physics = FreeStream
 incflo.velocity = 1.0 0.0 0.0
 incflo.density = 1.0
 
-geometry.prob_lo        =   -12.0 -6.0 -0.375 # Lo corner coordinates
-geometry.prob_hi        =   12.0 6.0 0.375 # Hi corner coordinates
+geometry.prob_lo        =   -24.0 -12.0 -0.375 # Lo corner coordinates
+geometry.prob_hi        =   24.0 12.0 0.375 # Hi corner coordinates
 geometry.is_periodic    =   0   0   1   # Periodicity x y z (0/1)
 
 
@@ -108,13 +108,13 @@ nodal_proj.mg_rtol = 1.0e-6
 nodal_proj.mg_atol = 1.0e-10
 
 # Mesh Refinement
-#amr.n_cell            = 256 128 8 # Grid cells at coarsest AMRlevel
-amr.n_cell            = 128 64 4 # Grid cells at coarsest AMRlevel
-amr.blocking_factor_x = 128
-amr.blocking_factor_y = 64
+amr.n_cell            = 256 128 4 # Grid cells at coarsest AMRlevel
+#amr.n_cell            = 128 64 4 # Grid cells at coarsest AMRlevel
+amr.blocking_factor_x = 256
+amr.blocking_factor_y = 128
 amr.blocking_factor_z = 4
-amr.max_grid_size_x = 128
-amr.max_grid_size_y = 64
+amr.max_grid_size_x = 256
+amr.max_grid_size_y = 128
 amr.max_grid_size_z = 4
 
 amrex.abort_on_out_of_memory=1
